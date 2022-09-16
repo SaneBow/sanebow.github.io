@@ -102,13 +102,15 @@
                 "
             >{{more_authors_hide}}</span>
           {%- endif -%}
-
           </div>
+          {%- if entry.equal -%}
+          <em><u>* indicates equal contribution</u></em>
+          {%- endif -%}
 
           <!-- Journal/Book title and date -->
           {% if entry.type == "article" -%}
             {%- capture entrytype -%}<em>{{entry.journal}}</em>{%- endcapture -%}
-          {%- elsif ["inproceedings", "incollection"] contains entry.type -%}
+          {%- elsif entry.type == "inproceedings" -%}
             {%- capture entrytype -%}<em>In {{entry.booktitle}}</em> {%- endcapture -%}
           {%- else -%}
             {%- capture entrytype -%}{%- endcapture -%}

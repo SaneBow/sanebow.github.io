@@ -1,82 +1,105 @@
 ---
 ---
 
-@string{aps = {American Physical Society,}}
-
-@book{einstein1956investigations,
+@article{Wang2022PHYjackingPI,
+  title={PHYjacking: Physical Input Hijacking for Zero-Permission Authorization Attacks on Android},
+  author={Xianbo Wang and Shangcheng Shi and Yikang Chen and Wing Cheong Lau},
+  journal={Proceedings Network and Distributed System Security Symposium},
+  year={2022},
+  abbr={NDSS},
+  abstract={Nowadays, most mobile devices are equipped with various hardware interfaces such as touchscreen, fingerprint scanner, camera and microphone to capture inputs from the user.
+Many mobile apps use these physical interfaces to receive user-input for authentication/authorization operations including one-click login, fingerprint-based payment approval, and face/voice unlocking.
+In this paper, we investigate the so-called PHYjacking attack where a victim is misled by a zero-permission malicious app to feed physical inputs to different hardware interfaces on a mobile device to result in unintended authorization.
+We analyze the protection mechanisms in Android for different types of physical input interfaces and introduce new techniques to bypass them.
+Specifically, we identify weaknesses in the existing protection schemes for the related system APIs and observe common pitfalls when apps implement physical-input-based authorization.
+Worse still, we discover a race-condition bug in Android that can be exploited even when app-based mitigations are properly implemented.
+Based on these findings, we introduce fingerprint-jacking and facejacking techniques and demonstrate their impact on real apps.
+We also discuss the feasibility of launching similar attacks against NFC and microphone inputs, as well as effective tapjacking attacks against Single Sign-On apps.
+We have designed a static analyzer to examine 3000+ real-world apps and find 44% of them contain PHYjacking-related implementation flaws.
+We demonstrate the practicality and potential impact of PHYjacking via proof-of-concept implementations which enable unauthorized money transfer on a payment app with over 800 million users, user-privacy leak from a social media app with over 400 million users and escalating app permissions in Android 11.},
   bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation,},
-  preview={brownian-motion.gif}
-}
-
-@article{einstein1950meaning,
-  abbr={AJP},
-  bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics,},
-  volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers,}
-}
-
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein, A. and Podolsky, B. and Rosen, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.,},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
+  pdf={https://www.ndss-symposium.org/wp-content/uploads/2022-97-paper.pdf},
+  website={https://mobitec.ie.cuhk.edu.hk/phyjacking},
   selected={true}
 }
 
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik,},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
-}
-
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.,},
-  volume={17},
-  pages={549--560},
-  year={1905}
-}
-
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
-}
-
-@book{przibram1967letters,
+@inproceedings{yang2021scalable,
+  title={Scalable Detection of Promotional Website Defacements in Black Hat $\{$SEO$\}$ Campaigns},
+  author={Yang*, Ronghai and Wang*, Xianbo and Chi, Cheng and Wang, Dawei and He, Jiawei and Pang, Siming and Lau, Wing Cheong},
+  booktitle={30th USENIX Security Symposium (USENIX Security 21)},
+  pages={3703--3720},
+  year={2021},
+  equal={true},
+  abbr={USENIX},
+  abstract={Miscreants from online underground economies regularly exploit website vulnerabilities and inject fraudulent content into victim web pages to promote illicit goods and services. 
+Scalable detection of such promotional website defacements remains an open problem despite their prevalence in Black Hat Search Engine Optimization (SEO) campaigns. 
+Adversaries often manage to inject content in a stealthy manner by obfuscating the description of illicit products and/or the presence of defacements to make them undetectable. 
+In this paper, we design and implement DMoS—a Defacement Monitoring System which protects websites from promotional defacements at scale. Our design is based on two key observations: 
+Firstly, for effective advertising, the obfuscated jargons of illicit goods or services need to be easily understood by their target customers (i.e., sharing similar shape or pronunciation). 
+Secondly, to promote the underground business, the defacements are crafted to boost search engine ranking of the defaced web pages while trying to stay stealthy from the maintainers and legitimate users of the compromised websites. 
+Leveraging these insights, we first follow the human convention and design a jargon normalization algorithm to map obfuscated jargons to their original forms. 
+We then develop a tag embedding mechanism, which enables DMoS to focus more on those not-so-visually-obvious, yet site-ranking influential HTML tags (i.e., title, meta). 
+Consequently, DMoS can reliably detect illicit content hidden in compromised web pages. In particular, we have deployed DMoS as a cloud-based monitoring service for a five-month trial run. 
+It has analyzed more than 38 million web pages across 7000+ commercial Chinese websites and found defacements in 11% of these websites. It achieves a recall over 99% with a precision about 89%. 
+While the original design of DMoS focuses on the detection of Chinese promotional defacements, we have extended the system and demonstrated its applicability for English website defacement detection via proof-of-concept experiments.},
+  pdf={https://www.usenix.org/system/files/sec21-yang-ronghai.pdf},
+  slides={https://www.usenix.org/system/files/sec21_slides_yang-ronghai.pdf},
   bibtex_show={true},
-  title={Letters on wave mechanics},
-  author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year={1967},
-  publisher={Vision},
-  preview={wave-mechanics.gif}
+  selected={true}
+}
+
+@inproceedings{shi2021breaking,
+  title={Breaking and Fixing Third-Party Payment Service for Mobile Apps},
+  author={Shi, Shangcheng and Wang, Xianbo and Lau, Wing Cheong},
+  booktitle={International Conference on Applied Cryptography and Network Security},
+  pages={3--26},
+  year={2021},
+  organization={Springer},
+  abbr={ACNS},
+  abstract={Riding on the widespread user adoption of mobile payment, a growing number of mobile apps have integrated the service from third-party payment service providers or so-called Cashiers. Despite its prevalence and critical nature, no existing standard can guide the secure deployment of mobile payment. Thus, the protocol designs and implementations from different Cashiers are diverse. Given the complicated multi-party interactions in mobile payment, either the Cashiers or the apps may not fully consider various threat models, which enlarges the attack surface and causes the exploits with severe consequences, ranging from financial loss to privacy violations. In this paper, we perform an in-depth security analysis of real-world third-party payment services for mobile apps. Specifically, we examine the mobile payment systems from five top-tier Cashiers that serve over one billion users globally. Leveraging insecure protocol designs and practical implementation flaws, e.g., vulnerable backend SDKs for mobile apps, we have discovered six types of exploits. These exploits enable the attacker to violate user privacy and shop for free in the victim apps, affecting millions of users. Finally, we propose the fixings to defend against these exploits. We have shared our findings with the affected Cashiers and got their positive responses.},
+  pdf={https://link.springer.com/content/pdf/10.1007/978-3-030-78375-4_1.pdf},
+  bibtex_show={true}
+}
+
+@inproceedings{shi2021empirical,
+  title={An Empirical Study on Mobile Payment Credential Leaks and Their Exploits},
+  author={Shi, Shangcheng and Wang, Xianbo and Zeng, Kyle and Yang, Ronghai and Lau, Wing Cheong},
+  booktitle={International Conference on Security and Privacy in Communication Systems},
+  pages={79--98},
+  year={2021},
+  organization={Springer},
+  abbr={SecureComm},
+  abstract={Recently, mobile apps increasingly integrate with payment services, enabling the user to pay orders with a third-party payment service provider, namely Cashier. During the payment process, both the app and Cashier rely on some credentials to secure the service. Despite the importance, many developers tend to overlook the protection of payment credentials and inadvertently expose them to the wild. Such leaks severely affect the security of end-users and the merchants associated with the apps, resulting in privacy violations and actual financial loss. In this paper, we study the payment credential leaks for four top-tiered Cashiers that serve over one billion users and tens of millions of merchants globally. Through studying practical mobile payment systems, we identify new leaking sources of payment credentials and find 4 types of exploits with severe consequences, which are caused by the credential leaks and additional implementation flaws. Besides, we design an automatic tool, PayKeyMiner, and use it to discover around 20,000 leaked payment credentials, affecting thousands of apps. We have reported our findings to the Cashiers. All of them have confirmed the issue and pledged to notify the affected merchant apps, while some of these apps have updated the leaked payment credentials afterward.},
+  pdf={https://link.springer.com/content/pdf/10.1007/978-3-030-90022-9_5.pdf},
+  bibtex_show={true}
+}
+
+@article{Wang2020EvadingWA,
+  title={Evading Web Application Firewalls with Reinforcement Learning},
+  author={Xianbo Wang and Han Hu},
+  journal={Technical Report},
+  year={2020},
+  abstract={ Web Application Firewalls (WAF) are widely deployed to protect web servers from security threats like SQL injections. 
+WAF products employ various techniques, e.g., syntax signature and machine learning, to detect and block suspicious web traffics. 
+However, no WAF can be absolutely secure, there are always space for adversaries to craft malicious messages that can evade the detection.
+In the past, most evasion techniques are developed manually, which requires labour and intelligence. 
+In this work, we propose to explore the possibility of automating the process of WAF evasion using reinforcement learning. 
+We created a reinforcement learning environment (based on OpenAI gym) for WAF evasion tasks and evaluate various mainstream WAF products with Proximal Policy Optimization (PPO) algorithm. 
+Our framework successfully discovered numbers of evasion payloads for each WAF in our experiments and can significantly outperform baseline policy. 
+Finally, we extract common patterns from the discovered evasion payloads and discuss weaknesses/flaws of existing WAF products as well as suggested improvements. },
+  pdf={https://openreview.net/pdf?id=m5AntlhJ7Z5},
+  bibtex_show={true}
+}
+
+@inproceedings{shi2019mossot,
+  title={MoSSOT: An automated blackbox tester for single sign-on vulnerabilities in mobile applications},
+  author={Shi, Shangcheng and Wang, Xianbo and Lau, Wing Cheong},
+  booktitle={Proceedings of the ACM Asia Conference on Computer and Communications Security},
+  pages={269--282},
+  year={2019},
+  abbr={AsiaCCS},
+  abstract={Mobile applications today increasingly integrate Single Sign-On (SSO) into their account management mechanisms. Unfortunately, the involved multi-party protocol, i.e., OAuth 2.0, was originally designed to serve websites for authorization purpose. Due to the complexity of the adapted protocol, a large number of insecure SSO implementations still exist in the wild. Although the security testing for real-world SSO deployments has attracted considerable attention in recent years, existing work either focuses on websites or relies on the manual discovery of specific and previously-known vulnerabilities. In the paper, we design and implement MoSSOT (Mobile SSO Tester), an automated blackbox security testing tool for Android applications utilizing the SSO services from three mainstream service providers. The tool detects the vulnerabilities within the practical SSO implementations by fuzzing related network messages. We used MoSSOT to examine over 500 first-tier third-party Android applications from US and Chinese app markets. According to the test result, around 72% of the tested applications incorrectly implement SSO and are thus vulnerable. Besides, our test identifies an unknown vulnerability as well as a new variant, in addition to four known ones. The vulnerabilities enable the attacker to illegally log into the mobile applications as the victims or gain access to the protected resources. MoSSOT has been released as an open-source project.},
+  pdf={https://mobitec.ie.cuhk.edu.hk/sso/MoSSOT.pdf},
+  bibtex_show={true},
+  code={https://github.com/cuhk-mobitec/MoSSOT}
 }

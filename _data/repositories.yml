@@ -1,12 +1,8 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - sanebow
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - sanebow/redirect-fuzzer
+  - sanebow/PiDTLN
+  - sanebow/alsa-aec
+  - sanebow/gym-waf
