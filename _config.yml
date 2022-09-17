@@ -195,6 +195,22 @@ defaults:
       path: "assets/**/*.*"
     values:
       sitemap: false
+  - scope:
+      path: "projects/**/*.*"
+    values:
+      sitemap: false
+  - scope:
+      path: "teaching/**/*.*"
+    values:
+      sitemap: false
+  - scope:
+      path: "cv/**/*.*"
+    values:
+      sitemap: false
+  - scope:
+      path: "blog/**/*.*"
+    values:
+      sitemap: false
 
 # -----------------------------------------------------------------------------
 # Jekyll Minifier
