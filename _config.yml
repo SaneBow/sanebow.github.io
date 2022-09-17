@@ -139,7 +139,7 @@ collections:
     output: true
     permalink: /news/:path/
   projects:
-    output: true
+    output: false
     permalink: /projects/:path/
 
 news_scrollable: true # adds a vertical scroll bar if there are more than 3 news items
@@ -196,19 +196,7 @@ defaults:
     values:
       sitemap: false
   - scope:
-      path: "projects/**/*.*"
-    values:
-      sitemap: false
-  - scope:
-      path: "teaching/**/*.*"
-    values:
-      sitemap: false
-  - scope:
-      path: "cv/**/*.*"
-    values:
-      sitemap: false
-  - scope:
-      path: "blog/**/*.*"
+      path: "_posts/"
     values:
       sitemap: false
 
