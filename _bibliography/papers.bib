@@ -103,3 +103,60 @@ Finally, we extract common patterns from the discovered evasion payloads and dis
   bibtex_show={true},
   code={https://github.com/cuhk-mobitec/MoSSOT}
 }
+
+@article{RedirectionBH2019,
+  title={Make Redirection Evil Again: URL Parser Issues in OAuth},
+  author={Xianbo Wang and Shangcheng Shi and Ronghai Yang and Wing Cheong Lau},
+  journal={Black Hat Asia Briefings},
+  year={2019},
+  abbr={Black Hat},
+  abstract={Since 2012, OAuth 2.0 has been widely deployed by online service providers worldwide. 
+Security-related headlines related to OAuth showed up from time to time, and most problems were caused by incorrect implementations of the protocol. 
+The User-Agent Redirection mechanism in OAuth is one of the weaker links as it is difficult for developers and operators to realize, understand and implement all the subtle but critical requirements properly. 
+In this talk, we begin by tracing the history of the security community's understanding of OAuth redirection threats. 
+The resultant evolution of the OAuth specification, as well as the best current practice on its implementation, will also be discussed. 
+We then introduce new OAuth redirection attack techniques which exploit the interaction of URL parsing problems with redirection handling in mainstream browsers or mobile apps. 
+In particular, some attacks leverage our newly discovered URL interpretation bugs in mainstream browsers or Android platform (The latter were independently discovered and have been patched recently). 
+Our empirical study on 50 OAuth service providers worldwide found that numerous top-tiered providers with over 10,000 OAuth client apps and 10’s of millions of end-users are vulnerable to this new attack with severe impact. 
+In particular, it enables the attacker to hijack 3rd party (Relying party) application accounts, gain access to sensitive private information, or even perform privileged actions on behalf of the victim users.},
+  bibtex_show={true},
+  pdf={https://i.blackhat.com/asia-19/Fri-March-29/bh-asia-Wang-Make-Redirection-Evil-Again-wp.pdf},
+  slides={https://i.blackhat.com/asia-19/Fri-March-29/bh-asia-Wang-Make-Redirection-Evil-Again.pdf},
+  code={https://github.com/SaneBow/redirect-fuzzer},
+  selected={true}
+}
+
+@article{FingerjackingBH2020,
+  title={Fingerprint-Jacking: Practical Fingerprint Authorization Hijacking in Android Apps},
+  author={Xianbo Wang and Yikang Chen and Ronghai Yang and Shangcheng Shi and Wing Cheong Lau},
+  journal={Black Hat Europe Briefings},
+  year={2020},
+  abbr={Black Hat},
+  abstract={Many mobile devices carry a fingerprint scanner nowadays. Mobile apps utilize the fingerprint scanner to facilitate operations such as account login and payment authorization. 
+  Despite its security-critical nature, relatively little effort has been devoted to the security analysis of fingerprint scanner, especially from the system security aspect. 
+  In this paper, we introduce fingerprint-jacking, a type of User-Interface-based (UI) attack that targets fingerprint hijacking in Android apps. We coin the term from clickjacking, 
+  as our attack also conceals the original interface beneath a fake covering. Specifically, we discover five novel attack techniques, 
+  all of which can be launched from zero-permission malicious apps and some can even bypass the latest countermeasures in Android 9+. 
+  Our race-attack is effective against all apps that integrate the fingerprint API. As apps' implementation flaws intensify the fingerprint-jacking vulnerability, 
+  we have designed a static analyzer to efficiently identify apps with implementation flaws that can lead to fingerprint-jacking. 
+  In our evaluation of 1630 Android apps that utilize the fingerprint API, we found 347 (21.3%) apps with different implementation issues. 
+  We have successfully performed proof-of-concept attacks on some popular apps, including stealing money via a payment app with over 100,000,000 users, gaining root access in the most widely used root manager app, and much more. 
+  We have also reported related vulnerability to Google, which is identified as CVE-2020-27059 and will be fixed in next Android patch release. Finally, we give guidance to Android app developers for secure fingerprint implementation.},
+  bibtex_show={true},
+  slides={http://i.blackhat.com/eu-20/Thursday/eu-20-Wang-Fingerprint-Jacking-Practical-Fingerprint-Authorization-Hijacking-In-Android-Apps.pdf},
+  video={https://www.youtube.com/watch?v=P5VAwTEIte0}
+}
+
+@article{PaymentBH2021,
+  title={Mining and Exploiting (Mobile) Payment Credential Leaks in the Wild},
+  author={Shangcheng Shi and Xianbo Wang and Wing Cheong Lau},
+  journal={Black Hat Asia Briefings},
+  year={2021},
+  abbr={Black Hat},
+  abstract={Over the past decade, an increasing number of mobile apps have integrated the third-party payment function from service providers or so-called Cashiers. Thus, end-users can perform the payment within the smartphone through these Cashiers readily. To secure their services, the Cashiers define various payment credentials, e.g., PKCS#12 certificates, and share them with mobile apps for authentication and authorization operations, such as refund. Despite the security-critical nature of these payment credentials, the existing works focus on the specific credential leaks from known sources, e.g., Android APKs or GitHub. In contrast, little effort has been spent to study the prevalence of payment credential leaks in the wild and their security impacts.
+In this talk, we begin by giving the background of the mobile payment service from four first-tier Cashiers that serve over 1 billion users globally. After that, we introduce the potential leaking sources of the payment credentials, including the new ones that have not been investigated on a large scale before. For example, we find that the backend servers of mobile apps can expose payment credentials to the public inadvertently. Then, we describe four exploits enabled by the payment credential leaks when combining other implementation flaws. These exploits all bring about serious consequences, ranging from direct financial loss to the mobile apps to privacy violations for end-users. Specifically, with the leaked payment credentials, the attacker may steal money from the account of the mobile apps directly and obtain all the user payment records.
+Further, we design and implement an automatic tool to conduct credential mining from public VCS and APKs at a market scale. Consequently, we discovered around 20,000 leaked payment credentials, affecting thousands of apps and millions of end-users. We have made the responsible disclosure to the Cashiers, and some leaking apps revoked their credentials afterward.},
+  bibtex_show={true},
+  pdf={http://i.blackhat.com/asia-21/Thursday-Handouts/as-21-Shi-Mining-And-Exploiting-Mobile-Payment-Credential-Leaks-In-The-Wild-wp.pdf},
+  slides={http://i.blackhat.com/asia-21/Thursday-Handouts/as-21-Shi-Mining-And-Exploiting-Mobile-Payment-Credential-Leaks-In-The-Wild.pdf}
+}
