@@ -1,6 +1,95 @@
 ---
 ---
 
+@article{LuoPlatformOAuth,
+  title={Universal Cross-app Attacks: Exploiting and Securing OAuth2.0 in Integration Platforms},
+  author={Kaixuan Luo and Xianbo Wang and Adonis Fung and Wing Cheong Lau and Julien Lecomte},
+  journal={34th USENIX Security Symposium (USENIX Security 25)},
+  year={2025},
+  abbr={USENIX},
+  abstract={Integration Platforms such as Workflow Automation Platforms, Virtual Assistants and Smart Home Systems are becoming an integral part of the Internet. 
+These platforms welcome third-parties to develop and distribute apps in their marketplaces as integrations, and entrust users’ authorizations to provide aggregated access towards crucial data and operations of the apps. 
+Despite the security criticality in supporting authorizations, new security threats emerge when the vulnerable platform designs are exploited by untrusted third-parties.
+In this paper, we present an in-depth study on two new platform-wide attacks, namely the Cross-app OAuth2 Account Takeover (COAT) and Request Forgery (CORF). Stemming from flawed OAuth2 protocol designs across multi-app integration platforms, the vulnerabilities respectively result in unauthorized access or privacy leakage of the targeted app’s data. 
+As long as a victim user interacts with a malicious app, or potentially with just a single click on a malicious link, the user risks the rest of his/her apps at the platform compromised.
+To facilitate systematic discovery of vulnerabilities, we developed a semi-automated black-box scanner that traverses varied OAuth designs to identify both vulnerabilities in real-world platforms. 
+Our measurement study reveals that among 16 popular consumer- or enterprise-facing integration platforms, 9 and 5 (14 in total) are vulnerable to COAT and CORF respectively, including those built by Microsoft, Google, Amazon and Xiaomi. 
+The vulnerabilities render widespread impact, leading to unauthorized control over users’ devices and services, covert logging of sensitive information, and compromising a major ecosystem in single click. We responsibly reported the vulnerabilities and collaborated with the affected vendors to deploy comprehensive solutions.},
+  bibtex_show={true},
+  selected={false}
+}
+
+@article{LuoOAuthBH,
+   title={One Hack to Rule Them All: Pervasive Account Takeovers in Integration Platforms for Workflow Automation, Virtual Voice Assistant, IoT, & LLM Services},
+    author={Kaixuan Luo and Xianbo Wang and Adonis Fung and Julien Lecomte and Wing Cheong Lau},
+    journal={Black Hat USA Briefings},
+    year={2024},
+    abbr={Black Hat},
+    abstract={Integration Platforms for Workflow Automation (e.g., Microsoft Power Automate), Virtual Voice Assistants (e.g., Amazon Alexa), Smart Homes (e.g., Google Home), and Large Language Model (LLM) platforms supporting Plugins (e.g. OpenAI ChatGPT), are becoming essential in our personal and professional lives. However, we find many of these platforms vulnerable to a new class of authorization attacks.
+As one of their core functions, integration platforms support "Account Linking" to connect end-users' accounts at third-party services/apps (e.g., Gmail, Dropbox) to their platform account. This enables the platform to utilize and orchestrate a wide range of external services on behalf of the end-user. For example, users can configure Microsoft Power Automate to automatically send an email whenever a new GitHub issue is filed. Multi-party authorizations are known to be error-prone and should have gone through strict security scrutiny. Yet, with our newly discovered attacks, we successfully exploit the account linking mechanisms of 24 out of 25 mainstream integration platforms, resulting in account takeovers or privacy leakage of integrated apps/services.
+In this talk, we unveil how top-tier vendors improperly realize OAuth-based account linking under the new context of Integration Platforms. The failure to verify bindings with both the intended platform user and active third-party service/app compromises the session integrity of account linking. We detail the technical aspects of 3 attacks on integration platforms' authorization frameworks: two enable account takeovers, and one leads to forced account linking of arbitrary services/apps. Notably, most attacks have easy-to-satisfy preconditions and can often be reduced to 1-click attacks. For instance, an attacker can compromise victims' Microsoft 365 suite or Azure services with their single click on an unassuming link (a CVE with CVSS 9.6).
+We also offer our comprehensive insights into best security practices and mitigations and highlight some vendors' invalid remedial attempts for each identified threat, benefiting the wider community.},
+    bibtex_show={true},
+    selected={true}
+}
+
+@article{swide,
+  title={SWIDE: A Semantic-aware Detection Engine for Successful Web Injection Attacks},
+  author={Ronghai Yang* and Xianbo Wang* and Kaixuan Luo and Xin Lei and Ke Li and Jiayuan Lin and Wing Cheong Lau},
+  journal={Proceedings ACM Conference on Computer and Communications Security (CCS)},
+  year={2024},
+  abbr={CCS},
+  equal={true},
+  abstract={Web attacks, a primary vector for system breaches, pose a significant challenge within the cybersecurity landscape.
+The growing intensity of web attack attempts has led to ``alert fatigue'' where enterprises are inundated by excessive alerts. 
+Although extensive research is being conducted on automated methods for detecting web attacks, it remains an open problem to identify whether the attacks are successful. 
+Towards this end, we present SWIDE (Successful Web Injection Detection Engine), an engine to pinpoint successful web injection attacks (e.g., PHP command injection, SQL injection). 
+This enables enterprises to focus exclusively on those crucial threats. Our methodology builds on two insights: 
+Firstly, while attackers tend to apply payload obfuscation techniques to evade detection, all successful web injection attacks must comply with the programming language syntax to be executable; 
+Secondly, these attacks inevitably produce observable effects, such as returning execution result or creating backdoors for future access by the attacker. 
+Consequently, we leverage advanced syntactic and semantic analysis to 1) detect malicious syntax features in obfuscated payloads and 2) perform semantic analysis of the payload to recover the intention of the attack. 
+With a two-stage design, namely, attack identification and confirmation mechanisms, SWIDE can accurately identify successful attacks, even amidst intricate obfuscations. 
+Unlike proof-of-concept studies, SWIDE has been deployed and validated in real-world environments through collaborations with a cybersecurity firm. 
+Serving 5,045 enterprise users, our system identifies that roughly 15\% of enterprises have suffered from successful attacks on a weekly basis - an alarmingly high rate. 
+Moreover, we perform a detailed analysis of six months’ data and discover 60 zero-day vulnerabilities exploited in the wild, including 12 high-risk ones acknowledged by relevant authorities. 
+These findings underscore the practical effectiveness of SWIDE.},
+  bibtex_show={true},
+  website={https://mobitec.ie.cuhk.edu.hk/swide},
+  selected={true}
+}
+
+@article{LivingLieACNS,
+  title={Living a Lie: Security Analysis of Facial Liveness Detection Systems in Mobile Apps},
+  author={Xianbo Wang and Kaixuan Luo and Wing Cheong Lau},
+  journal={International Conference on Applied Cryptography and Network Security},
+  year={2024},
+  abstract={Mobile apps are embracing facial recognition technology to streamline the identity verification procedure for security-critical activities such as opening online bank accounts. 
+To ensure the security of the system, liveness detection plays a vital role as an anti-spoofing component, verifying that a selfie provided is from a live individual. 
+Emerging facial recognition companies offer convenient integration services through mobile libraries that are widely utilized by numerous apps in the market. By analyzing 18 mobile facial recognition libraries, we reveal the protocol design and implementation intricacies of various systems.
+The investigation leads to the discovery of several system security issues in over half of the libraries, predominantly linked to the liveness detection module. These vulnerabilities can be exploited for low-cost identity forgery attacks without relying on media synthesizing technologies like deepfake. 
+We scan 18,096 apps from an app market and identify 802 apps incorporating recognized facial recognition libraries, with over 100 million total downloads. More than half of the libraries examined exhibit weak security, with about 40% downstream mobile apps being affected. 
+This study emphasizes the importance of system security in mobile facial recognition services, as the practical impact can be on par with or even surpass the extensively studied machine learning attacks.},
+  bibtex_show={true},
+  selected={false},
+  pdf={https://link.springer.com/chapter/10.1007/978-3-031-54776-8_17}
+}
+
+@article{LivingDeadBHUSA,
+  title={The Living Dead: Hacking Mobile Face Recognition SDKs with Non-Deepfake Attacks},
+  author={Xianbo Wang and Kaixuan Luo and Wing Cheong Lau},
+  journal={Black Hat USA Briefings},
+  year={2023},
+  abbr={Black Hat},
+  abstract={Face recognition is increasingly popular in mobile apps, especially for critical tasks like opening a bank account. To prevent identity spoof using injected images, liveness detection is crucial. This is particularly important due to the widespread availability of stolen identity documents and selfies on the black market.
+While many researchers have studied deepfake or presentation attacks that target machine learning models, few have addressed the protocol design or implementation issues in face recognition systems that can enable low-cost and easy-to-scale attacks. Starting from several real-world incidents of non-deepfake attacks, we will delve into the technical aspect of mobile face recognition spoofing. Our analysis of 18 mobile face recognition libraries, including those from industry leaders, reveals their security flaws that can result in liveness detection bypasses.
+After scanning more than 18,000 apps, we discovered approximately 1,000 apps that had face recognition libraries and a total of 100 million downloads. We conducted proof-of-concept identity forgery attacks against several popular apps. Without presenting in camera, we were able to complete identity verification by using only static photos of the "victim". Finally, we will provide reference protocol for secure face recognition systems in mobile apps, along with security caveats for implementation.
+With this talk, we hope to draw the community's attention back on to the system security in the era of AI.},
+  bibtex_show={true},
+  website={https://www.blackhat.com/us-23/briefings/schedule/#the-living-dead-hacking-mobile-face-recognition-sdks-with-non-deepfake-attacks-32096},
+  video={https://www.youtube.com/watch?v=nPE2AjNB2sI},
+  selected={true}
+}
+
 @article{Wang2022PHYjackingPI,
   title={PHYjacking: Physical Input Hijacking for Zero-Permission Authorization Attacks on Android},
   author={Xianbo Wang and Shangcheng Shi and Yikang Chen and Wing Cheong Lau},
