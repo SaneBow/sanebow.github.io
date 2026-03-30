@@ -1,8 +1,0 @@
-github_users:
-  - sanebow
-
-github_repos:
-  - sanebow/redirect-fuzzer
-  - sanebow/PiDTLN
-  - sanebow/alsa-aec
-  - sanebow/gym-waf
